@@ -16,11 +16,13 @@ class StocksBoughtTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getStocksBought { result in
-            self.boughtStocks = result
+            if result == nil {
+                self.alert(message: "Error Getting Data :(")
+                return
+            }
+            self.boughtStocks = result!
             self.tableView.reloadData()
         }
-        
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -45,9 +47,7 @@ class StocksBoughtTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
         let stock = boughtStocks[indexPath.row]
-        cell.stockName.text = stock.name
-        cell.stockPrice.text = stock.price
-    
+        cell.stockName.text = stock.name    
         return cell
     }
 
@@ -95,5 +95,15 @@ class StocksBoughtTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
+}
+
+extension UITableViewController {
+  func alert(message: String, title: String = "") {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+    alertController.addAction(OKAction)
+    self.present(alertController, animated: true, completion: nil)
+  }
 }

@@ -12,14 +12,14 @@ import SwiftyJSON
 
 class ViewModel {
     
-    func getStocksBought(completion: @escaping ([boughtStock]) -> Void){
+    func getStocksBought(completion: @escaping ([boughtStock]?) -> Void){
         Alamofire.request("http://192.168.0.20:5000/stocksBought")
           .responseJSON{ response in
             guard response.result.isSuccess else {
-              print("Error while getting response : \(String(describing: response.result.error))")
-              return
+                print("Error while getting response : \(String(describing: response.result.error))")
+                completion(nil)
+                return
             }
-            
             guard let data = response.result.value as? [Dictionary<String, String>] else {
                 print("couldn't get data")
                 return

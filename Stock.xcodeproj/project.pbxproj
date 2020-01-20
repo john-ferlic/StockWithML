@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11165DD323D578A200B7D84F /* StocksBoughtTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11165DD223D578A200B7D84F /* StocksBoughtTableViewController.swift */; };
+		11165DD723D579D000B7D84F /* boughtStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11165DD623D579D000B7D84F /* boughtStock.swift */; };
+		11E2FB5723D5511E00C4BF5F /* StocksBoughtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E2FB5623D5511E00C4BF5F /* StocksBoughtCell.swift */; };
 		4F83A2F7228C627700C94F0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83A2F6228C627700C94F0C /* AppDelegate.swift */; };
 		4F83A2F9228C627700C94F0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83A2F8228C627700C94F0C /* ViewController.swift */; };
 		4F83A2FC228C627700C94F0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F83A2FA228C627700C94F0C /* Main.storyboard */; };
@@ -15,8 +18,6 @@
 		4F83A30C228C627A00C94F0C /* StockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83A30B228C627A00C94F0C /* StockTests.swift */; };
 		4F83A317228C627A00C94F0C /* StockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F83A316228C627A00C94F0C /* StockUITests.swift */; };
 		4F9D792922942E520073428B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D792822942E520073428B /* ViewModel.swift */; };
-		4F9D792E22944ED00073428B /* ResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F9D792D22944ED00073428B /* ResultView.xib */; };
-		4F9D793022945D590073428B /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D792F22945D590073428B /* ResultView.swift */; };
 		4FD5B352228C9F7C002869C2 /* SMA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5B351228C9F7C002869C2 /* SMA.swift */; };
 		78752FD61E6BF72788448FFF /* Pods_Stock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9738707CEBE56D82A3B338 /* Pods_Stock.framework */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11165DD223D578A200B7D84F /* StocksBoughtTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksBoughtTableViewController.swift; sourceTree = "<group>"; };
+		11165DD623D579D000B7D84F /* boughtStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boughtStock.swift; sourceTree = "<group>"; };
+		11E2FB5623D5511E00C4BF5F /* StocksBoughtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksBoughtCell.swift; sourceTree = "<group>"; };
 		4F83A2F3228C627700C94F0C /* Stock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F83A2F6228C627700C94F0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F83A2F8228C627700C94F0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,8 +57,6 @@
 		4F83A316228C627A00C94F0C /* StockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockUITests.swift; sourceTree = "<group>"; };
 		4F83A318228C627A00C94F0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F9D792822942E520073428B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		4F9D792D22944ED00073428B /* ResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultView.xib; sourceTree = "<group>"; };
-		4F9D792F22945D590073428B /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		4FD5B351228C9F7C002869C2 /* SMA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMA.swift; sourceTree = "<group>"; };
 		5C9738707CEBE56D82A3B338 /* Pods_Stock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AB9C5DBFDAB077D3385119 /* Pods-Stock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stock.release.xcconfig"; path = "Target Support Files/Pods-Stock/Pods-Stock.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,9 +155,9 @@
 			children = (
 				4F83A2F8228C627700C94F0C /* ViewController.swift */,
 				4F83A2FA228C627700C94F0C /* Main.storyboard */,
+				11E2FB5623D5511E00C4BF5F /* StocksBoughtCell.swift */,
 				4F83A2FF228C627A00C94F0C /* LaunchScreen.storyboard */,
-				4F9D792D22944ED00073428B /* ResultView.xib */,
-				4F9D792F22945D590073428B /* ResultView.swift */,
+				11165DD223D578A200B7D84F /* StocksBoughtTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				4FD5B351228C9F7C002869C2 /* SMA.swift */,
+				11165DD623D579D000B7D84F /* boughtStock.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -292,7 +295,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F83A301228C627A00C94F0C /* LaunchScreen.storyboard in Resources */,
-				4F9D792E22944ED00073428B /* ResultView.xib in Resources */,
 				4F83A2FE228C627A00C94F0C /* Assets.xcassets in Resources */,
 				4F83A2FC228C627700C94F0C /* Main.storyboard in Resources */,
 			);
@@ -369,8 +371,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FD5B352228C9F7C002869C2 /* SMA.swift in Sources */,
+				11165DD723D579D000B7D84F /* boughtStock.swift in Sources */,
+				11165DD323D578A200B7D84F /* StocksBoughtTableViewController.swift in Sources */,
+				11E2FB5723D5511E00C4BF5F /* StocksBoughtCell.swift in Sources */,
 				4F83A2F9228C627700C94F0C /* ViewController.swift in Sources */,
-				4F9D793022945D590073428B /* ResultView.swift in Sources */,
 				4F9D792922942E520073428B /* ViewModel.swift in Sources */,
 				4F83A2F7228C627700C94F0C /* AppDelegate.swift in Sources */,
 			);

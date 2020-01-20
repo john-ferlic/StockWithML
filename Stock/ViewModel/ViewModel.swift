@@ -8,22 +8,33 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class ViewModel {
-  func getData(symbol: String, completion: @escaping (avgSMA) -> Void){
-    Alamofire.request("http://127.0.0.1:5000/\(symbol)")
-      .responseString { response in
-        guard response.result.isSuccess, let _ = response.result.value , let data = response.data else {
-          print("Error while getting response : \(String(describing: response.result.error))")
-          return
+    
+    func getStocksBought(completion: @escaping ([boughtStock]) -> Void){
+        Alamofire.request("http://192.168.0.20:5000/stocksBought")
+          .responseJSON{ response in
+            guard response.result.isSuccess else {
+              print("Error while getting response : \(String(describing: response.result.error))")
+              return
+            }
+            
+            guard let data = response.result.value as? [Dictionary<String, String>] else {
+                print("couldn't get data")
+                return
+            }
+            var stocks = [boughtStock]()
+            for details in data {
+                let ticker = details["ticker"]!
+                let price = details["price"]!
+                let name = details["name"]!
+                let numStocks = details["numStocks"]!
+                let totStockPrice = details["totStockPrice"]!
+                let stock = boughtStock(ticker: ticker, price: price, name: name, numStocks: numStocks, totStockPrice: totStockPrice)
+                stocks += [stock]
+            }
+            completion(stocks)
         }
-        do {
-          let dat = try JSONDecoder().decode(avgSMA.self, from: data)
-          completion(dat)
-        }
-        catch {
-          print(error.localizedDescription)
-        }
-    }
   }
 }

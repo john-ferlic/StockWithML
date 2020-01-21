@@ -10,15 +10,25 @@ import UIKit
 
 class StockBoughtDetailsViewController: UIViewController {
     
-    @IBOutlet weak var tickerLabel: UILabel!
-    
-    var stock = boughtStock(ticker: "NA", price: "NA", name: "NA", numStocks: "NA", totStockPrice: "NA")
+	@IBOutlet weak var stockNameLabel: UILabel!
+	@IBOutlet weak var tickerLabel: UILabel!
+	@IBOutlet weak var priceLabel: UILabel!
+	@IBOutlet weak var numStocksLabel: UILabel!
+	@IBOutlet weak var totalPriceLabel: UILabel!
+	
+	
+	var stock = boughtStock()
 
     override func viewDidLoad() {
-        print(stock.ticker)
-        print(stock.name)
         super.viewDidLoad()
+		stockNameLabel.text = stock.name
         tickerLabel.text = stock.ticker
+		priceLabel.text = stock.price
+		numStocksLabel.text = stock.numStocks
+		totalPriceLabel.text = stock.totStockPrice
+		tickerLabel.layer.borderColor = UIColor.green.cgColor
+		tickerLabel.layer.borderWidth = 3.0
+		
         // Do any additional setup after loading the view.
     }
     

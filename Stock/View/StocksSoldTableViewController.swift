@@ -1,37 +1,39 @@
 //
-//  StocksBoughtTableViewController.swift
-//  Stock
+//  StocksSoldTableViewController.swift
+//  
 //
-//  Created by John Ferlic on 1/20/20.
-//  Copyright © 2020 ctsuser. All rights reserved.
+//  Created by ctsuser on 1/21/20.
 //
 
 import UIKit
 
-class StocksBoughtTableViewController: UITableViewController {
-    
+class StocksSoldTableViewController: UITableViewController {
+
     var viewModel = ViewModel()
-    var boughtStocks = [boughtStock]()
+	var soldStocks = [stockSold]()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        viewModel.getStocksBought { result in
-//            if result == nil {
-//                self.alert(message: "Error Getting Data :(")
-//                return
-//            }
-//            self.boughtStocks = result!
-//            self.tableView.reloadData()
-//        }
-		let testData = boughtStock(ticker: "TSLA", price: "455", name: "Tesla", numStocks: "2", totStockPrice: "910")
-		boughtStocks += [testData]
-		self.tableView.reloadData()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+		override func viewDidLoad() {
+			super.viewDidLoad()
+	//        viewModel.getStocksBought { result in
+	//            if result == nil {
+	//                self.alert(message: "Error Getting Data :(")
+	//                return
+	//            }
+	//            self.boughtStocks = result!
+	//            self.tableView.reloadData()
+	//        }
+			
+			let stock = stockSold(timeSold: "2:30", name: "Tesla", ticker: "TSLA", priceBought: "420", priceNow: "450", numStocksBought: "2")
+			soldStocks += [stock]
+			
+			self.tableView.reloadData()
+			// Uncomment the following line to preserve selection between presentations
+			// self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+			// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+			// self.navigationItem.rightBarButtonItem = self.editButtonItem
+		}
+
 
     // MARK: - Table view data source
 
@@ -42,15 +44,16 @@ class StocksBoughtTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return boughtStocks.count
+		return soldStocks.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? StocksBoughtCell else {
-            fatalError("The dequeued cell is not an instance of StocksBoughtCell.")
-        }
-        let stock = boughtStocks[indexPath.row]
-        cell.stockName.text = stock.name    
+		 guard let cell = tableView.dequeueReusableCell(withIdentifier: "stockSoldIdentifier", for: indexPath) as? StockSoldCell else {
+				   fatalError("The dequeued cell is not an instance of StockSoldCell.")
+			   }
+		let stock = soldStocks[indexPath.row]
+		cell.stockSoldLabel.text = stock.name
+
         return cell
     }
 
@@ -88,30 +91,22 @@ class StocksBoughtTableViewController: UITableViewController {
         return true
     }
     */
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		   self.performSegue(withIdentifier: "stockSoldSegueIdentifier", sender: indexPath.row)
+	}
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "stockBoughtDetailsSegueId", sender: indexPath.row)
-    }
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if let indexPath = tableView.indexPathForSelectedRow {
-            guard let destinationVC = segue.destination as? StockBoughtDetailsViewController else {return}
+            guard let destinationVC = segue.destination as? StockSoldDetailsViewController else {return}
             let selectedRow = indexPath.row
-            destinationVC.stock = boughtStocks[selectedRow]
+            destinationVC.stock = soldStocks[selectedRow]
         }
         
     }
-    
 
-}
-
-extension UITableViewController {
-  func alert(message: String, title: String = "") {
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-    alertController.addAction(OKAction)
-    self.present(alertController, animated: true, completion: nil)
-  }
 }

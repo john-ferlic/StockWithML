@@ -14,6 +14,14 @@ class boughtStock: Codable {
     var name: String
     var numStocks: String
     var totStockPrice: String
+	
+	init() {
+		ticker = "N/A"
+		price = "N/A"
+		name = "N/A"
+		numStocks = "N/A"
+		totStockPrice = "N/A"
+	}
     
     init(ticker: String, price: String, name: String, numStocks: String, totStockPrice: String) {
         self.ticker = ticker

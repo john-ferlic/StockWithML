@@ -11,11 +11,13 @@ import Foundation
 
 class ViewController: UIViewController{
     @IBOutlet weak var stocksBought: UIButton!
-    
+	@IBOutlet weak var stocksSold: UIButton!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+		stocksBought.layer.cornerRadius = stocksBought.frame.size.height/2
+		stocksSold.layer.cornerRadius = stocksSold.frame.size.height/2
     }
-    
     
 }
 

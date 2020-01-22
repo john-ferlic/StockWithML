@@ -15,16 +15,16 @@ class StocksBoughtTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel.getStocksBought { result in
-//            if result == nil {
-//                self.alert(message: "Error Getting Data :(")
-//                return
-//            }
-//            self.boughtStocks = result!
-//            self.tableView.reloadData()
-//        }
-		let testData = boughtStock(ticker: "TSLA", price: "455", name: "Tesla", numStocks: "2", totStockPrice: "910")
-		boughtStocks += [testData]
+        viewModel.getStocksBought { result in
+            if result == nil {
+                self.alert(message: "Error Getting Data :(")
+                return
+            }
+            self.boughtStocks = result!
+            self.tableView.reloadData()
+        }
+//		let testData = boughtStock(ticker: "TSLA", price: "455", name: "Tesla", numStocks: "2", totStockPrice: "910")
+//		boughtStocks += [testData]
 		self.tableView.reloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

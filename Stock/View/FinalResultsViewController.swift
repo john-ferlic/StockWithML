@@ -32,11 +32,11 @@ class FinalResultsViewController: UIViewController {
 //        }
         
         beginningMoneyLabel.text = fresult.beginningAmountOfMoney
-        endingMoneyLabel.text = fresult.totMoneyToEnd
-        percentChangeLabel.text = fresult.percentageChange
+        endingMoneyLabel.text = String(fresult.totMoneyToEnd)
+        percentChangeLabel.text = String(fresult.percentageChange)
         spyBeginningMoneyLabel.text = fresult.spyOpen
         spyEndingMoneyLabel.text = fresult.spyClose
-        spyPercentChangeLabel.text = fresult.spyPercentageChange
+        spyPercentChangeLabel.text = String(fresult.spyPercentageChange)
         // Do any additional setup after loading the view.
     }
     

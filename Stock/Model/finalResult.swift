@@ -10,29 +10,21 @@ import Foundation
 
 class finalResult: Codable {
     var beginningAmountOfMoney: String
-    var totMoneyToEnd: String
-    var percentageChange: String
+    var totMoneyToEnd: Double
+    var percentageChange: Double
     var spyOpen: String
     var spyClose: String
-    var spyPercentageChange: String
+    var spyPercentageChange: Double
     
     init() {
         beginningAmountOfMoney = "N/A"
-        totMoneyToEnd = "N/A"
-        percentageChange = "N/A"
+        totMoneyToEnd = -1
+        percentageChange = -1
         spyOpen = "N/A"
         spyClose = "N/A"
-        spyPercentageChange = "N/A"
+        spyPercentageChange = -1
     }
     
-    init(timeSold: String, name: String, ticker: String, priceBought: String, priceNow: String, numStocksBought: String) {
-        self.beginningAmountOfMoney = timeSold
-        self.totMoneyToEnd = name
-        self.percentageChange = ticker
-        self.spyOpen = priceBought
-        self.spyClose = priceNow
-        self.spyPercentageChange = numStocksBought
-    }
 }
 
 

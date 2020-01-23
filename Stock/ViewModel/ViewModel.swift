@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class ViewModel {
     
+    let decoder = JSONDecoder()
+    
     func getStocksBought(completion: @escaping ([boughtStock]?) -> Void){
         Alamofire.request("http://192.168.0.20:5000/stocksBought")
           .responseJSON{ response in
@@ -42,12 +44,13 @@ class ViewModel {
           Alamofire.request("http://192.168.0.20:5000/stocksSold")
             .responseJSON{ response in
               guard response.result.isSuccess else {
-                  print("Error while getting response : \(String(describing: response.result.error))")
+                  print("Error while getting response: \(String(describing: response.result.error))")
                   completion(nil)
                   return
               }
               guard let data = response.result.value as? [Dictionary<String, String>] else {
                   print("couldn't get data")
+                  completion(nil)
                   return
               }
               var stocks = [stockSold]()
@@ -63,6 +66,28 @@ class ViewModel {
               }
               completion(stocks)
           }
+    }
+    
+    func getFinalResults(completion: @escaping (finalResult?) -> Void) {
+        Alamofire.request("http://192.168.0.20:5000/finalResults")
+            .responseJSON { response in
+                guard response.result.isSuccess else {
+                    print("Error while getting response: \(String(describing: response.result.error))")
+                    completion(nil)
+                    return
+                }
+                guard let data = response.result.value else {
+                    print("couldn't properly format data")
+                    return
+                }
+                do {
+                    let json = try JSONSerialization.data(withJSONObject: data)
+                    let finalr = try self.decoder.decode(finalResult.self, from: json)
+                    completion(finalr)
+                } catch {
+                    print(error.localizedDescription)
+                }
+        }
     }
     
 }

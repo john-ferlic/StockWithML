@@ -12,7 +12,7 @@ class StocksBoughtTableViewController: UITableViewController {
     
     var viewModel = ViewModel()
     var boughtStocks = [boughtStock]()
-
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getStocksBought { result in
@@ -23,6 +23,8 @@ class StocksBoughtTableViewController: UITableViewController {
             self.boughtStocks = result!
             self.tableView.reloadData()
         }
+		
+		
 //		let testData = boughtStock(ticker: "TSLA", price: "455", name: "Tesla", numStocks: "2", totStockPrice: "910")
 //		boughtStocks += [testData]
 		self.tableView.reloadData()
@@ -33,10 +35,7 @@ class StocksBoughtTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -92,16 +91,13 @@ class StocksBoughtTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "stockBoughtDetailsSegueId", sender: indexPath.row)
     }
-
+	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         if let indexPath = tableView.indexPathForSelectedRow {
             guard let destinationVC = segue.destination as? StockBoughtDetailsViewController else {return}
             let selectedRow = indexPath.row
             destinationVC.stock = boughtStocks[selectedRow]
         }
-        
     }
     
 

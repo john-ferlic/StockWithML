@@ -11,10 +11,6 @@ import Foundation
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 	
-    @IBOutlet weak var stocksBought: UIButton!
-	@IBOutlet weak var stocksSold: UIButton!
-    @IBOutlet weak var finalResults: UIButton!
-	
 	
 	var buttonArray: [UIButton] = []
 	var cellWidth: CGFloat = 0
@@ -27,29 +23,29 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-		stocksBought.layer.cornerRadius = stocksBought.frame.size.height/2
-		stocksSold.layer.cornerRadius = stocksSold.frame.size.height/2
-        finalResults.layer.cornerRadius = finalResults.frame.size.height/2
 		cellWidth = self.collectionView.frame.width/1.5
 		let array = ["Stocks Bought", "Stocks Sold", "Final Results"]
 		for index in 0...array.count-1{
 			let button = UIButton(frame: CGRect(x: 0, y: 0, width: cellWidth, height: self.collectionView.frame.height))
 			if index == 0 {
-				button.backgroundColor = UIColor.blue
+				button.backgroundColor = UIColor(red: 0.98, green: 0.61, blue: 0.06, alpha: 1.0)
 				button.addTarget(self, action:#selector(self.stocksBoughtButtonTapped), for: .touchUpInside)
 			} else if index == 1 {
-				button.backgroundColor = UIColor.red
+                button.backgroundColor = UIColor(red: 0.29, green: 0.28, blue: 0.28, alpha: 1.0)
 				button.addTarget(self, action:#selector(self.stocksSoldButtonTapped), for: .touchUpInside)
 			} else {
-				button.backgroundColor = UIColor.green
+				button.backgroundColor = UIColor(red: 0.98, green: 0.61, blue: 0.06, alpha: 1.0)
+                button.addTarget(self, action: #selector(self.finalResultsButtonTapped), for: .touchUpInside)
 			}
 			button.setTitle(array[index], for: .normal)
+            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 36)
+//            button.titleLabel?.adjustsFontSizeToFitWidth = true
 			buttonArray += [button]
 		}
         
-//        viewModel.getFinalResults { fResult in
-//            self.fResult = fResult!
-//        }
+        viewModel.getFinalResults { fResult in
+            self.fResult = fResult!
+        }
 		
     }
 	
@@ -62,10 +58,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 	@objc func stocksSoldButtonTapped(sender : UIButton) {
 		performSegue(withIdentifier: "seguesold", sender: nil)
 	}
-//
-//	@objc func finalResultsButtonTapped(sender : UIButton) {
-//		let destination =
-//	}
+
+	@objc func finalResultsButtonTapped(sender : UIButton) {
+		performSegue(withIdentifier: "finalResultsSegue", sender: nil)
+	}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? FinalResultsViewController {
@@ -97,7 +93,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CelliD", for: indexPath)
 		
 		let butt = buttonArray[indexPath.row]
-		cell.layer.cornerRadius = cell.frame.size.height/8
+		cell.layer.cornerRadius = cell.frame.size.height/20
 		cell.addSubview(butt)
 		
 		return cell

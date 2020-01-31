@@ -11,7 +11,8 @@ import UIKit
 class StockSoldCell: UITableViewCell {
 
 	@IBOutlet weak var stockSoldLabel: UILabel!
-	
+    @IBOutlet var arrowImage: UIImageView!
+    
 	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

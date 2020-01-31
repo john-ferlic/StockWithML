@@ -33,14 +33,12 @@ class StockSoldDetailsViewController: UIViewController {
         nameLabel.text = stock.name
         timeSoldLabel.text = stock.timeSold
         tickerLabel.text = stock.ticker
-        priceBoughtLabel.text = stock.priceBought
-        priceSoldLabel.text = stock.priceNow
+        priceBoughtLabel.text = String(stock.priceBought)
+        priceSoldLabel.text = String(stock.priceNow)
         numStocksBoughtLabel.text = stock.numStocksBought
         
-        let stockPriceBought = Float(stock.priceBought) ?? 0
-        let stockPriceSold = Float(stock.priceNow) ?? 0
         
-        if stockPriceSold < stockPriceBought {
+        if stock.priceNow < stock.priceBought {
             nameLabel.textColor = UIColor.red
         } else {
             nameLabel.textColor = UIColor.green

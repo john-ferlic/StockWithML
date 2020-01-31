@@ -49,6 +49,11 @@ class StocksSoldTableViewController: UITableViewController {
                    fatalError("The dequeued cell is not an instance of StockSoldCell.")
                }
         let stock = soldStocks[indexPath.row]
+        if stock.priceBought < stock.priceNow {
+            cell.arrowImage.image = UIImage(named: "green_arrow")
+        } else {
+            cell.arrowImage.image = UIImage(named: "red_arrow")
+        }
         cell.stockSoldLabel.text = stock.name
 
         return cell

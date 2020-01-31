@@ -9,59 +9,41 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
-	
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, alertDelegate{
+    
+    var weewoo: alert?
+    
+    func displayAlert(message: String) {
+        print(message)
+    }
 	
 	var buttonArray: [UIButton] = []
 	var cellWidth: CGFloat = 0
 	let SegueArray = ["stocksBoughtSegue", "seguesold", "finalResultsSegue"]
 	let HeaderArray = ["Stocks Bought", "Stocks Sold", "Final Results"]
 	@IBOutlet weak var collectionView: UICollectionView!
-	
-	
+    @IBOutlet weak var cashForDayLabel: UILabel!
+    
 	let viewModel = ViewModel()
     var fResult = finalResult()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-		cellWidth = self.collectionView.frame.width/1.5
-//		for index in 0...array.count-1{
-//			let button = UIButton(frame: CGRect(x: 0, y: 0, width: cellWidth, height: self.collectionView.frame.height))
-//			if index == 0 {
-//				button.backgroundColor = UIColor(red: 0.12, green: 0.38, blue: 0.97, alpha: 1.0)
-//				button.addTarget(self, action:#selector(self.stocksBoughtButtonTapped), for: .touchUpInside)
-//			} else if index == 1 {
-//                button.backgroundColor = UIColor(red: 0.29, green: 0.28, blue: 0.28, alpha: 1.0)
-//				button.addTarget(self, action:#selector(self.stocksSoldButtonTapped), for: .touchUpInside)
-//			} else {
-//				button.backgroundColor = UIColor.blue
-//                button.addTarget(self, action: #selector(self.finalResultsButtonTapped), for: .touchUpInside)
-//			}
-//			button.setTitle(array[index], for: .normal)
-//            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 36)
-////            button.titleLabel?.adjustsFontSizeToFitWidth = true
-//			buttonArray += [button]
-//		}
         
-//        viewModel.getFinalResults { fResult in
-//            self.fResult = fResult!
-//        }
-		
+        weewoo = alert()
+        weewoo?.delegate = self
+        weewoo?.printStuff()
+        
+		cellWidth = self.collectionView.frame.width/1.5
+        viewModel.getFinalResults { fResult in
+            if fResult == nil {
+                return
+            }
+            self.fResult = fResult!
+            self.cashForDayLabel.text = self.fResult.beginningAmountOfMoney
+        }
+        
     }
-	
-//	@objc func stocksBoughtButtonTapped(sender : UIButton) {
-////		let destination = StocksBoughtTableViewController()
-////		present(destination, animated: true, completion: nil)
-//		performSegue(withIdentifier: "stocksBoughtSegue", sender: nil)
-//	}
-//
-//	@objc func stocksSoldButtonTapped(sender : UIButton) {
-//		performSegue(withIdentifier: "seguesold", sender: nil)
-//	}
-//
-//	@objc func finalResultsButtonTapped(sender : UIButton) {
-//		performSegue(withIdentifier: "finalResultsSegue", sender: nil)
-//	}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? FinalResultsViewController {
@@ -98,12 +80,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 		cell.headerLabel.text = HeaderArray[indexPath.row]
 		cell.headerLabel.lineBreakMode = .byWordWrapping
 		cell.headerLabel.numberOfLines = 2
-		cell.backgroundColor = UIColor(red: 0.13, green: 0.85, blue: 0.95, alpha: 1)
-//		let butt = buttonArray[indexPath.row]
+        cell.backgroundColor = UIColor.systemBlue
 		cell.layer.cornerRadius = cell.frame.size.height/20
-//		cell.addSubview(butt)
 		
 		return cell
 	}
+    
+    
 }
 

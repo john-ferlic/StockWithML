@@ -1,20 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dZB-Ay-Zp2">
     <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="BUt-Rl-bhK">
+            <objects>
+                <viewController id="dZB-Ay-Zp2" customClass="LoginViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d2k-un-6wg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImP-ZW-EVd">
+                                <rect key="frame" x="84" y="145" width="247" height="73"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-ML-SN5">
+                                <rect key="frame" x="84" y="314" width="247" height="34"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fYS-oM-p5J">
+                                <rect key="frame" x="84" y="431" width="247" height="34"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydm-74-o8A">
+                                <rect key="frame" x="128" y="669" width="159" height="77"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="159" id="K7V-mK-WXU"/>
+                                    <constraint firstAttribute="height" constant="77" id="zML-p7-9qA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="25"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClick:" destination="dZB-Ay-Zp2" eventType="touchUpInside" id="TWs-Wk-QnM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fYS-oM-p5J" firstAttribute="leading" secondItem="xk5-4B-DL8" secondAttribute="leading" constant="84" id="26I-vE-sJG"/>
+                            <constraint firstItem="ydm-74-o8A" firstAttribute="leading" secondItem="xk5-4B-DL8" secondAttribute="leading" constant="128" id="4cO-NP-SxX"/>
+                            <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="JwO-ML-SN5" secondAttribute="trailing" constant="83" id="Bl9-Ud-TUO"/>
+                            <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="fYS-oM-p5J" secondAttribute="trailing" constant="83" id="F2S-kE-5zH"/>
+                            <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="ydm-74-o8A" secondAttribute="trailing" constant="127" id="GFa-m9-wf2"/>
+                            <constraint firstItem="fYS-oM-p5J" firstAttribute="top" secondItem="JwO-ML-SN5" secondAttribute="bottom" constant="83" id="IXB-zy-7gT"/>
+                            <constraint firstItem="ImP-ZW-EVd" firstAttribute="top" secondItem="xk5-4B-DL8" secondAttribute="top" constant="101" id="Z55-cO-ZXx"/>
+                            <constraint firstItem="JwO-ML-SN5" firstAttribute="leading" secondItem="xk5-4B-DL8" secondAttribute="leading" constant="84" id="ikv-Sx-sCw"/>
+                            <constraint firstItem="xk5-4B-DL8" firstAttribute="bottom" secondItem="ydm-74-o8A" secondAttribute="bottom" constant="116" id="lK2-BR-Nhw"/>
+                            <constraint firstItem="JwO-ML-SN5" firstAttribute="top" secondItem="ImP-ZW-EVd" secondAttribute="bottom" constant="96" id="tMD-eK-wnz"/>
+                            <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="ImP-ZW-EVd" secondAttribute="trailing" constant="83" id="umz-GH-f9G"/>
+                            <constraint firstItem="ImP-ZW-EVd" firstAttribute="leading" secondItem="xk5-4B-DL8" secondAttribute="leading" constant="84" id="ySu-KK-7bp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xk5-4B-DL8"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="fYS-oM-p5J" id="Jho-hV-WfD"/>
+                        <outlet property="usernameTextField" destination="JwO-ML-SN5" id="Jys-eY-tVd"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginSegue" id="PQ0-Kg-9uo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktY-Uq-KWf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1833.3333333333335" y="900.66964285714278"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stock Market Day Trading Algorithm" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afe-K3-TY2">
@@ -36,7 +105,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zHN-8U-2YM">
-                                <rect key="frame" x="20" y="421" width="374" height="428"/>
+                                <rect key="frame" x="20" y="421" width="374" height="377"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IJj-ws-T4B">
@@ -47,7 +116,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CelliD" id="m5I-K6-Oc0" customClass="MainScreenCollectionViewCell" customModule="Stock" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="85.666666666666671" width="287" height="257"/>
+                                        <rect key="frame" x="0.0" y="60" width="287" height="257"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Wk-dd-Km9">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="257"/>
@@ -87,6 +156,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="c1l-Zg-x9f"/>
                     <connections>
                         <outlet property="cashForDayLabel" destination="3Cm-OF-bFW" id="3Qa-xf-sjW"/>
                         <outlet property="collectionView" destination="zHN-8U-2YM" id="SxZ-tn-hs4"/>

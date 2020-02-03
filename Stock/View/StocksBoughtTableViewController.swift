@@ -23,16 +23,8 @@ class StocksBoughtTableViewController: UITableViewController {
             self.boughtStocks = result!
             self.tableView.reloadData()
         }
-		
-		
-//		let testData = boughtStock(ticker: "TSLA", price: "455", name: "Tesla", numStocks: "2", totStockPrice: "910")
-//		boughtStocks += [testData]
 		self.tableView.reloadData()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+		self.clearsSelectionOnViewWillAppear = true
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,41 +45,6 @@ class StocksBoughtTableViewController: UITableViewController {
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "stockBoughtDetailsSegueId", sender: indexPath.row)
     }
@@ -98,9 +55,7 @@ class StocksBoughtTableViewController: UITableViewController {
             let selectedRow = indexPath.row
             destinationVC.stock = boughtStocks[selectedRow]
         }
-    }
-    
-
+	}
 }
 
 extension UITableViewController {

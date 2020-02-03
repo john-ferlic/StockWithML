@@ -37,6 +37,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 		cellWidth = self.collectionView.frame.width/1.5
         viewModel.getFinalResults { fResult in
             if fResult == nil {
+				let alertController = UIAlertController(title: "Error", message: "Couldn't get stock data at this time :(", preferredStyle: .alert)
+				alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+				self.present(alertController, animated: true, completion: nil)
                 return
             }
             self.fResult = fResult!

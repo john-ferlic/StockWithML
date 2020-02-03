@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dZB-Ay-Zp2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dZB-Ay-Zp2">
     <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +19,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImP-ZW-EVd">
                                 <rect key="frame" x="84" y="145" width="247" height="73"/>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -58,7 +58,7 @@
                             <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="JwO-ML-SN5" secondAttribute="trailing" constant="83" id="Bl9-Ud-TUO"/>
                             <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="fYS-oM-p5J" secondAttribute="trailing" constant="83" id="F2S-kE-5zH"/>
                             <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="ydm-74-o8A" secondAttribute="trailing" constant="127" id="GFa-m9-wf2"/>
-                            <constraint firstItem="fYS-oM-p5J" firstAttribute="top" secondItem="JwO-ML-SN5" secondAttribute="bottom" constant="83" id="IXB-zy-7gT"/>
+                            <constraint firstItem="fYS-oM-p5J" firstAttribute="top" secondItem="JwO-ML-SN5" secondAttribute="bottom" constant="50" id="IXB-zy-7gT"/>
                             <constraint firstItem="ImP-ZW-EVd" firstAttribute="top" secondItem="xk5-4B-DL8" secondAttribute="top" constant="101" id="Z55-cO-ZXx"/>
                             <constraint firstItem="JwO-ML-SN5" firstAttribute="leading" secondItem="xk5-4B-DL8" secondAttribute="leading" constant="84" id="ikv-Sx-sCw"/>
                             <constraint firstItem="xk5-4B-DL8" firstAttribute="bottom" secondItem="ydm-74-o8A" secondAttribute="bottom" constant="116" id="lK2-BR-Nhw"/>

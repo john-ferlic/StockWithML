@@ -109,6 +109,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11E278F423E7C6DB006CA2DF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F83A2F8228C627700C94F0C /* ViewController.swift */,
+				11165DD223D578A200B7D84F /* StocksBoughtTableViewController.swift */,
+				114B859A23D6A9CB00C7FFD7 /* StockBoughtDetailsViewController.swift */,
+				4F3F903523D79CD6008127A0 /* StockSoldDetailsViewController.swift */,
+				1181285D23D7AF37005F79E0 /* StocksSoldTableViewController.swift */,
+				1181285F23D808A1005F79E0 /* FinalResultsViewController.swift */,
+				4F09B51A23E4CCC4008D718F /* LoginViewController.swift */,
+				11E278F223E283F7006CA2DF /* alert.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		4F83A2EA228C627700C94F0C = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +149,7 @@
 		4F83A2F5228C627700C94F0C /* Stock */ = {
 			isa = PBXGroup;
 			children = (
+				11E278F423E7C6DB006CA2DF /* ViewControllers */,
 				4F9D792A22943ED00073428B /* View */,
 				4F9D792722942E3E0073428B /* ViewModel */,
 				4FD5B350228C9F4C002869C2 /* Model */,
@@ -173,20 +189,12 @@
 		4F9D792A22943ED00073428B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4F83A2F8228C627700C94F0C /* ViewController.swift */,
 				4F83A2FA228C627700C94F0C /* Main.storyboard */,
 				11E2FB5623D5511E00C4BF5F /* StocksBoughtCell.swift */,
 				4F83A2FF228C627A00C94F0C /* LaunchScreen.storyboard */,
-				11165DD223D578A200B7D84F /* StocksBoughtTableViewController.swift */,
-				114B859A23D6A9CB00C7FFD7 /* StockBoughtDetailsViewController.swift */,
 				4F3F903123D78F11008127A0 /* StockSoldCell.swift */,
-				4F3F903523D79CD6008127A0 /* StockSoldDetailsViewController.swift */,
-				1181285D23D7AF37005F79E0 /* StocksSoldTableViewController.swift */,
-				1181285F23D808A1005F79E0 /* FinalResultsViewController.swift */,
 				4FC507D123DA43070072CBDF /* MainScreenCollectionView.swift */,
 				4FFBA20823E20626008ADEB3 /* MainScreenCollectionViewCell.swift */,
-				11E278F223E283F7006CA2DF /* alert.swift */,
-				4F09B51A23E4CCC4008D718F /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

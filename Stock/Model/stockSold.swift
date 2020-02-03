@@ -25,12 +25,12 @@ class stockSold: Codable {
 		numStocksBought = "N/A"
 	}
     
-	init(timeSold: String, name: String, ticker: String, priceBought: Double, priceNow: Double, numStocksBought: String) {
-        self.timeSold = timeSold
-        self.name = name
-        self.ticker = ticker
-        self.priceBought = priceBought
-        self.priceNow = priceNow
-		self.numStocksBought = numStocksBought
-    }
+//	init(timeSold: String, name: String, ticker: String, priceBought: Double, priceNow: Double, numStocksBought: String) {
+//        self.timeSold = timeSold
+//        self.name = name
+//        self.ticker = ticker
+//        self.priceBought = priceBought
+//        self.priceNow = priceNow
+//		self.numStocksBought = numStocksBought
+//    }
 }

@@ -14,7 +14,6 @@ protocol alertDelegate: class {
 }
 
 class alert {
-
     weak var delegate: alertDelegate?
     
     func printStuff() {

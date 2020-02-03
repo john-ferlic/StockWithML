@@ -53,18 +53,30 @@ class ViewModel {
                   completion(nil)
                   return
               }
-              var stocks = [stockSold]()
-              for details in data {
-                  let timeSold = details["timeSold"] as! String
-                  let name = details["name"] as! String
-                  let ticker = details["ticker"] as! String
-                  let priceBought = details["priceBought"] as! Double
-                  let priceNow = details["priceNow"] as! Double
-                  let numStocksBought = details["numStocksBought"] as! String
-                let stock = stockSold(timeSold: timeSold, name: name, ticker: ticker, priceBought: priceBought, priceNow: priceNow, numStocksBought: numStocksBought)
-                  stocks += [stock]
-              }
-              completion(stocks)
+                var stocks = [stockSold]()
+                for x in data {
+                    print(x)
+                    let json = try? JSONSerialization.data(withJSONObject: x)
+                    let stock = try? self.decoder.decode(stockSold.self, from: json!)
+                    stocks += [stock!]
+                }
+                
+                completion(stocks)
+                
+                
+                
+//              var stocks = [stockSold]()
+//              for details in data {
+//                  let timeSold = details["timeSold"] as! String
+//                  let name = details["name"] as! String
+//                  let ticker = details["ticker"] as! String
+//                  let priceBought = details["priceBought"] as! Double
+//                  let priceNow = details["priceNow"] as! Double
+//                  let numStocksBought = details["numStocksBought"] as! String
+//                let stock = stockSold(timeSold: timeSold, name: name, ticker: ticker, priceBought: priceBought, priceNow: priceNow, numStocksBought: numStocksBought)
+//                  stocks += [stock]
+//              }
+//              completion(stocks)
           }
     }
     

@@ -42,7 +42,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.fResult = fResult!
             self.cashForDayLabel.text = self.fResult.beginningAmountOfMoney
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,7 +81,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 		cell.headerLabel.numberOfLines = 2
         cell.backgroundColor = UIColor.systemBlue
 		cell.layer.cornerRadius = cell.frame.size.height/20
-		
 		return cell
 	}
     

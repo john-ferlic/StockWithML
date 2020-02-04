@@ -81,4 +81,24 @@ class ViewModel {
         }
     }
     
+    func login(username: String, password: String, completion: @escaping (Bool) -> Void) {
+        Alamofire.request( "http://192.168.0.20:5000/login/", method: .post, parameters: ["username": username, "password" : password])
+        .responseJSON { response in
+            guard response.result.isSuccess else {
+                print("Error while getting response: \(String(describing: response.result.error))")
+                completion(false)
+                return
+            }
+            if response.response?.statusCode == 200 {
+                print("Success")
+                completion(true)
+                return()
+            }
+            else {
+                print("JSON data is nil.")
+                completion(false)
+            }
+         }
+    }
+    
 }

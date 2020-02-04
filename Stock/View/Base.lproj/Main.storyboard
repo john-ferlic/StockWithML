@@ -17,30 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImP-ZW-EVd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImP-ZW-EVd">
                                 <rect key="frame" x="84" y="145" width="247" height="73"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-ML-SN5">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-ML-SN5">
                                 <rect key="frame" x="84" y="314" width="247" height="34"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="88S-oY-Hyq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fYS-oM-p5J">
-                                <rect key="frame" x="84" y="431" width="247" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fYS-oM-p5J">
+                                <rect key="frame" x="84" y="385.66666666666669" width="247" height="34"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydm-74-o8A">
-                                <rect key="frame" x="128" y="669" width="159" height="77"/>
+                                <rect key="frame" x="128" y="712" width="159" height="50"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="159" id="K7V-mK-WXU"/>
-                                    <constraint firstAttribute="height" constant="77" id="zML-p7-9qA"/>
+                                    <constraint firstAttribute="height" constant="50" id="zML-p7-9qA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="25"/>
                                 <state key="normal" title="Sign in">
@@ -58,10 +61,11 @@
                             <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="JwO-ML-SN5" secondAttribute="trailing" constant="83" id="Bl9-Ud-TUO"/>
                             <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="fYS-oM-p5J" secondAttribute="trailing" constant="83" id="F2S-kE-5zH"/>
                             <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="ydm-74-o8A" secondAttribute="trailing" constant="127" id="GFa-m9-wf2"/>
-                            <constraint firstItem="fYS-oM-p5J" firstAttribute="top" secondItem="JwO-ML-SN5" secondAttribute="bottom" constant="50" id="IXB-zy-7gT"/>
+                            <constraint firstItem="fYS-oM-p5J" firstAttribute="top" secondItem="JwO-ML-SN5" secondAttribute="bottom" constant="37.666666666666686" id="OUR-lU-Pad"/>
                             <constraint firstItem="ImP-ZW-EVd" firstAttribute="top" secondItem="xk5-4B-DL8" secondAttribute="top" constant="101" id="Z55-cO-ZXx"/>
                             <constraint firstItem="JwO-ML-SN5" firstAttribute="leading" secondItem="xk5-4B-DL8" secondAttribute="leading" constant="84" id="ikv-Sx-sCw"/>
-                            <constraint firstItem="xk5-4B-DL8" firstAttribute="bottom" secondItem="ydm-74-o8A" secondAttribute="bottom" constant="116" id="lK2-BR-Nhw"/>
+                            <constraint firstItem="xk5-4B-DL8" firstAttribute="bottom" secondItem="ydm-74-o8A" secondAttribute="bottom" constant="100" id="lK2-BR-Nhw"/>
+                            <constraint firstItem="fYS-oM-p5J" firstAttribute="top" secondItem="d2k-un-6wg" secondAttribute="top" constant="385.66666666666669" id="t9g-KR-WKd"/>
                             <constraint firstItem="JwO-ML-SN5" firstAttribute="top" secondItem="ImP-ZW-EVd" secondAttribute="bottom" constant="96" id="tMD-eK-wnz"/>
                             <constraint firstItem="xk5-4B-DL8" firstAttribute="trailing" secondItem="ImP-ZW-EVd" secondAttribute="trailing" constant="83" id="umz-GH-f9G"/>
                             <constraint firstItem="ImP-ZW-EVd" firstAttribute="leading" secondItem="xk5-4B-DL8" secondAttribute="leading" constant="84" id="ySu-KK-7bp"/>
@@ -71,7 +75,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="fYS-oM-p5J" id="Jho-hV-WfD"/>
                         <outlet property="usernameTextField" destination="JwO-ML-SN5" id="Jys-eY-tVd"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginSegue" id="PQ0-Kg-9uo"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="loginSegue" id="PQ0-Kg-9uo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ktY-Uq-KWf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
